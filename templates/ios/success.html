@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connected</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+    background: #f2f2f7;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card {
+    background: #fff;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 340px;
+    padding: 40px 24px;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  }
+  .check {
+    width: 64px;
+    height: 64px;
+    background: #34c759;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+  }
+  .title { font-size: 20px; font-weight: 600; color: #1c1c1e; margin-bottom: 8px; }
+  .sub { font-size: 14px; color: #8e8e93; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="check">
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+      <path d="M7 16l7 7 11-11" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="title">Connected</div>
+  <div class="sub">You are now connected to the network.</div>
+</div>
+</body>
+</html>
