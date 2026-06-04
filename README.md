@@ -1,8 +1,8 @@
 <div align="center">
 
 ```
-  _ ____  _     _     _
- (_)  _ \| |__ (_)___| |__   ___ _ __
+  _  ____  _     _     _
+ (_)   _ \| |__ (_)___| |__   ___ _ __
  | || |_) | '_ \| / __| '_ \ / _ \ '__|
  | ||  __/| | | | \__ \ | | |  __/ |
  |_||_|   |_| |_|_|___/_| |_|\___|_|
@@ -43,24 +43,24 @@ The key difference from tools like `wifiphisher`: instead of a fake website, iPh
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│                        Attack Flow                            │
+│                        Attack Flow                           │
 ├──────────────────────────────────────────────────────────────┤
 │                                                              │
 │   📡 Adapter 1 (Monitor)  ──►  Deauth loop vs. real AP       │
-│   📶 Adapter 2 (AP mode)  ──►  Evil Twin clones the SSID      │
+│   📶 Adapter 2 (AP mode)  ──►  Evil Twin clones the SSID     │
 │   🔑 Adapter 3 (Managed)  ──►  Verifies password on real AP  │
 │                                                              │
-│   ┌────────┐   deauth    ┌──────────┐   joins   ┌─────────┐ │
-│   │ Victim │ ──────────► │ Kicked   │ ────────► │  Evil   │ │
-│   │        │             │   off    │           │  Twin   │ │
-│   └────────┘             └──────────┘           └────┬────┘ │
-│                                                      │      │
-│              ┌───────────────────────────────────────┘      │
-│              ▼                                              │
-│   OS shows native sign-in prompt  ──►  Password captured    │
-│              │                                              │
-│              ▼                                              │
-│   Verified against real router  ──►  ✓ Confirmed valid     │
+│   ┌────────┐   deauth    ┌──────────┐   joins   ┌─────────┐  │
+│   │ Victim │ ──────────► │ Kicked   │ ────────► │  Evil   │  │
+│   │        │             │   off    │           │  Twin   │  │
+│   └────────┘             └──────────┘           └────┬────┘  │
+│                                                      │       │
+│              ┌───────────────────────────────────────┘       │
+│              ▼                                               │
+│   OS shows native sign-in prompt  ──►  Password captured     │
+│              │                                               │
+│              ▼                                               │
+│   Verified against real router  ──►  ✓ Confirmed valid       │
 │                                                              │
 └──────────────────────────────────────────────────────────────┘
 ```
