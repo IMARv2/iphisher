@@ -120,6 +120,7 @@ These portals are auto-triggered by the OS — Captive Network Assistant on iOS/
 ```bash
 git clone https://github.com/IMARv2/iphisher.git
 cd iphisher
+sudo chmod +x install.sh
 sudo ./install.sh
 ```
 
