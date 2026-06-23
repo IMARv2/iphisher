@@ -99,7 +99,11 @@ These portals are auto-triggered by the OS — Captive Network Assistant on iOS/
 | Evil Twin | AP mode (hostapd) |
 | Verification | Managed mode |
 
-**Tested adapters:** Alfa AWUS036ACH · Alfa AWUS036NHA · TP-Link TL-WN722N v1
+**Tested adapters:** 
+- Alfa AWUS036AXML 
+- Alfa AWUS036ACH  
+- Alfa AWUS036NHA   
+- TP-Link TL-WN722N v1 
 
 ### Software
 - Kali Linux (recommended) or any Debian-based distro
